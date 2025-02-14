@@ -128,14 +128,7 @@ function App() {
 //Saving Page number to local storage
 useEffect(()=>{
   const page = window.localStorage.getItem("My_Page_No")
-  // if (page !== undefined && page !== null && page !== "undefined" && page !== "null"){
-  //  console.log("page has something")
-  //   setPageNo(JSON.parse(page))
-
-  // }else{
-  //   console.log("page does not have something")
-  //   setPageNo(0)
-  // }
+  
   console.log(typeof(page))
   if (page > 0){
     console.log("page no is greater then zero")
@@ -143,23 +136,6 @@ useEffect(()=>{
     setPageNo(0)
     console.log("page no is different")
   }
-  // setPageNo(JSON.parse(page))
-  // console.log(JSON.parse(page))
-  // if (page == "null"){
-  //   alert("page is null")
-  // } else{
-  //   alert("page is not null")
-  // }
-
-  // if (page !== "undefined" ){
-  //   setPageNo(JSON.parse(page))
-  // } else{
-  //   setPageNo(0)
-  // }
-
-  // if (page === "null" || page === "undefined"){
-  //   setPageNo(0)
-  // }
 },[])
 console.log(pageNo)
 useEffect(()=>{
@@ -265,9 +241,9 @@ setPickedTicket(value.id)
 }
   return (
     <div className="App">
-    <h1 className={pageNo===0?"test":"none"}>Hello1</h1>
+    {/* <h1 className={pageNo===0?"test":"none"}>Hello1</h1>
     <h1 className={pageNo===1?"test":"none"}>Hello2</h1>
-    <h1 className={pageNo===2?"test":"none"}>Hello3</h1>
+    <h1 className={pageNo===2?"test":"none"}>Hello3</h1> */}
       <header className="header">
       <img className="logo-image" src={Logo} alt=""/>
       <nav className="nav-menu">
@@ -281,8 +257,8 @@ setPickedTicket(value.id)
     </header>
     <main className='content-body'>
 
-    {/* <div className={pageNo===0?"section-1":"pageDisplayNone"}> */}
-    <div className="section-1">
+    <div className={pageNo===0?"section-1":"pageDisplayNone"}>
+    {/* <div className="section-1"> */}
       <TicketHead
         head={"Ticket Selection"}
         steps={"Step 1/3"}
@@ -336,8 +312,8 @@ setPickedTicket(value.id)
     </div>
 
       
-    {/* <div className={pageNo===1?"section-1 section2":"pageDisplayNone"}> */}
-    <div className="section-1 section2">
+    <div className={pageNo===1?"section-1 section2":"pageDisplayNone"}>
+    {/* <div className="section-1 section2"> */}
       <TicketHead
         head={"Attendee Details"}
         steps={"Step 2/3"}
@@ -397,8 +373,8 @@ setPickedTicket(value.id)
     </div>
     {/* } */}
 
-    {/* <div className={pageNo===2?'section-1 section2':"pageDisplayNone"}> */}
-    <div className='section-1 section2'>
+    <div className={pageNo===2?'section-1 section2':"pageDisplayNone"}>
+    {/* <div className='section-1 section2'> */}
     <TicketHead
         head={"Ready"}
         steps={"Step 3/3"}
