@@ -267,7 +267,7 @@ setPickedTicket(value.id)
           <li className="menu-Items">About Project</li>
         </ul>
       </nav>
-      <button className="tickets-button">MY TICKETS <img src={arrow}/></button>
+      <button className="tickets-button">MY TICKETS <img src={arrow} alt=""/></button>
     </header>
     <main className='content-body'>
 
