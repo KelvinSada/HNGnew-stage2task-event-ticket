@@ -1,12 +1,10 @@
 import React,{useEffect, useState} from 'react';
-// import React,{useState} from 'react';
 import './App.css';
 import cloudImage from "./picture/cloud.png";
 import Logo from "./picture/logo.png";
 import FormInput from './Forms-input';
 import TicketHead from './TicketHead';
 import arrow from "./picture/arrow.jpg";
-// import mail from "./picture/envelope.png"
 
 
 function App() {
@@ -121,18 +119,18 @@ function App() {
 
 
 //Saving TicketNo to local storage
-// useEffect(()=>{
-//   const ticketno = localStorage.getItem("Ticket_number")
-//   if (ticketno){
-//     setPickedTicket(JSON.parse(ticketno))
-//   }
-// },[])
+useEffect(()=>{
+  const ticketno = localStorage.getItem("Ticket_number")
+  if (ticketno){
+    setPickedTicket(JSON.parse(ticketno))
+  }
+},[])
 
 
-// useEffect(()=>{
-//   localStorage.setItem("Ticket_number",JSON.stringify(picketTicket))
-// // eslint-disable-next-line
-// },[picketTicket])
+useEffect(()=>{
+  localStorage.setItem("Ticket_number",JSON.stringify(picketTicket))
+// eslint-disable-next-line
+},[picketTicket])
 
 
 //Saving Page number to local storage
@@ -254,9 +252,6 @@ setPickedTicket(value.id)
 }
   return (
     <div className="App">
-    {/* <h1 className={pageNo===0?"test":"none"}>Hello1</h1>
-    <h1 className={pageNo===1?"test":"none"}>Hello2</h1>
-    <h1 className={pageNo===2?"test":"none"}>Hello3</h1> */}
       <header className="header">
       <img className="logo-image" src={Logo} alt=""/>
       <nav className="nav-menu">
@@ -316,10 +311,6 @@ setPickedTicket(value.id)
           name={"ticketno"}
           action={handleValue}
         />
-        {/* <div className="form-section-cont">
-          <label className='form-section-title'>"Number of tickets"</label>
-          <input className="form-section-input" type="number" value={formInputsValue.ticketno !== ""&&formInputsValue.ticketno} name="ticketno" onChange={handleValue} /> 
-        </div> */}
           {firstError&&<div className='error'>{firstError.ticketno}</div>}
           <div className='submit-buttons'>
             <button onClick={backButton} className='first-button'>Cancel</button>
