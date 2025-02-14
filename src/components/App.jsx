@@ -265,6 +265,9 @@ setPickedTicket(value.id)
 }
   return (
     <div className="App">
+    <h1 className={pageNo===0?"test":"none"}>Hello1</h1>
+    <h1 className={pageNo===1?"test":"none"}>Hello2</h1>
+    <h1 className={pageNo===2?"test":"none"}>Hello3</h1>
       <header className="header">
       <img className="logo-image" src={Logo} alt=""/>
       <nav className="nav-menu">
