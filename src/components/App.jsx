@@ -39,7 +39,7 @@ function App() {
     }
     //Send ticket to local storge
   useEffect(()=>{
-    const data = window.localStorage.getItem("MY_SAVED_FORM_INFO")
+    const data = localStorage.getItem("MY_SAVED_FORM_INFO")
     if (data !== "undefined"){
       setFormInputsValue(JSON.parse(data))
     }
@@ -47,7 +47,7 @@ function App() {
   },[])
   
   useEffect(()=>{
-      window.localStorage.setItem("MY_SAVED_FORM_INFO",JSON.stringify(formInputsValue))
+      localStorage.setItem("MY_SAVED_FORM_INFO",JSON.stringify(formInputsValue))
     // eslint-disable-next-line
   },[formInputsValue])
 
@@ -80,7 +80,7 @@ function App() {
 
     //Saving image to local storage
   useEffect(()=>{
-    const dataImage = window.localStorage.getItem("MY_SAVED_IMAGE")
+    const dataImage = localStorage.getItem("MY_SAVED_IMAGE")
     if (dataImage !== "undefined"){
       
       DownloadImage(JSON.parse(dataImage))
@@ -88,28 +88,28 @@ function App() {
   },[])
 
   useEffect(()=>{
-      window.localStorage.setItem("MY_SAVED_IMAGE",JSON.stringify(imageUrl))
+      localStorage.setItem("MY_SAVED_IMAGE",JSON.stringify(imageUrl))
     // eslint-disable-next-line
   },[imageUrl])
 
 
     //Saving TicketType to local storage
     useEffect(()=>{
-      const ticket = window.localStorage.getItem("Ticket_type")
+      const ticket = localStorage.getItem("Ticket_type")
       if (ticket !== "undefined"){
         setTicketType(JSON.parse(ticket))
       }
     },[])
 
     useEffect(()=>{
-      window.localStorage.setItem("Ticket_type",JSON.stringify(ticketType))
+      localStorage.setItem("Ticket_type",JSON.stringify(ticketType))
     // eslint-disable-next-line
   },[ticketType])
 
 
 //Saving TicketNo to local storage
 useEffect(()=>{
-  const ticketno = window.localStorage.getItem("Ticket_number")
+  const ticketno = localStorage.getItem("Ticket_number")
   if (ticketno !== "undefined"){
     setPickedTicket(JSON.parse(ticketno))
   }
@@ -117,7 +117,7 @@ useEffect(()=>{
 
 
 useEffect(()=>{
-  window.localStorage.setItem("Ticket_number",JSON.stringify(picketTicket))
+  localStorage.setItem("Ticket_number",JSON.stringify(picketTicket))
 // eslint-disable-next-line
 },[picketTicket])
 
