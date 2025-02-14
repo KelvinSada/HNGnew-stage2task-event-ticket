@@ -41,18 +41,18 @@ function App() {
   setPageNo(0);
     }
     //Send ticket to local storge
-  useEffect(()=>{
-    const data = localStorage.getItem("MY_SAVED_FORM_INFO")
-    if (data !== "undefined"){
-      setFormInputsValue(JSON.parse(data))
-    }
+  // useEffect(()=>{
+  //   const data = localStorage.getItem("MY_SAVED_FORM_INFO")
+  //   if (data !== "undefined"){
+  //     setFormInputsValue(JSON.parse(data))
+  //   }
   
-  },[])
+  // },[])
   
-  useEffect(()=>{
-      localStorage.setItem("MY_SAVED_FORM_INFO",JSON.stringify(formInputsValue))
-    // eslint-disable-next-line
-  },[formInputsValue])
+  // useEffect(()=>{
+  //     localStorage.setItem("MY_SAVED_FORM_INFO",JSON.stringify(formInputsValue))
+  //   // eslint-disable-next-line
+  // },[formInputsValue])
 
   
   
@@ -77,23 +77,23 @@ function App() {
   }
 
 
-  function DownloadImage(image){
-    setImageUrl(image)    
-  }
+  // function DownloadImage(image){
+  //   setImageUrl(image)    
+  // }
 
     //Saving image to local storage
-  useEffect(()=>{
-    const dataImage = localStorage.getItem("MY_SAVED_IMAGE")
-    if (dataImage !== "undefined"){
+  // useEffect(()=>{
+  //   const dataImage = localStorage.getItem("MY_SAVED_IMAGE")
+  //   if (dataImage !== "undefined"){
       
-      DownloadImage(JSON.parse(dataImage))
-    }
-  },[])
+  //     DownloadImage(JSON.parse(dataImage))
+  //   }
+  // },[])
 
-  useEffect(()=>{
-      localStorage.setItem("MY_SAVED_IMAGE",JSON.stringify(imageUrl))
-    // eslint-disable-next-line
-  },[imageUrl])
+  // useEffect(()=>{
+  //     localStorage.setItem("MY_SAVED_IMAGE",JSON.stringify(imageUrl))
+  //   // eslint-disable-next-line
+  // },[imageUrl])
 
 
     //Saving TicketType to local storage
@@ -111,18 +111,18 @@ function App() {
 
 
 //Saving TicketNo to local storage
-useEffect(()=>{
-  const ticketno = localStorage.getItem("Ticket_number")
-  if (ticketno !== "undefined"){
-    setPickedTicket(JSON.parse(ticketno))
-  }
-},[])
+// useEffect(()=>{
+//   const ticketno = localStorage.getItem("Ticket_number")
+//   if (ticketno !== "undefined"){
+//     setPickedTicket(JSON.parse(ticketno))
+//   }
+// },[])
 
 
-useEffect(()=>{
-  localStorage.setItem("Ticket_number",JSON.stringify(picketTicket))
-// eslint-disable-next-line
-},[picketTicket])
+// useEffect(()=>{
+//   localStorage.setItem("Ticket_number",JSON.stringify(picketTicket))
+// // eslint-disable-next-line
+// },[picketTicket])
 
 
 //Saving Page number to local storage
