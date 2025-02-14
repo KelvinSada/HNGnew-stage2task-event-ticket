@@ -109,11 +109,9 @@ function App() {
     //Saving TicketType to local storage
     useEffect(()=>{
       const ticket = localStorage.getItem("Ticket_type")
-      if (ticket !== "undefined"){
+      if (ticket){
         setTicketType(JSON.parse(ticket))
-      } else{
-
-      }
+      } 
     },[])
 
     useEffect(()=>{
