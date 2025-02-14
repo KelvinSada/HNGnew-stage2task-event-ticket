@@ -5,6 +5,8 @@ import cloudImage from "./picture/cloud.png";
 import Logo from "./picture/logo.png";
 import FormInput from './Forms-input';
 import TicketHead from './TicketHead';
+import arrow from "./picture/arrow.jpg";
+import mail from "./picture/envelope.png"
 
 
 function App() {
@@ -265,7 +267,7 @@ setPickedTicket(value.id)
           <li className="menu-Items">About Project</li>
         </ul>
       </nav>
-      <button className="tickets-button">MY TICKETS</button>
+      <button className="tickets-button">MY TICKETS <img src={arrow}/></button>
     </header>
     <main className='content-body'>
 
@@ -281,8 +283,13 @@ setPickedTicket(value.id)
     
       <div className='top-section1'>
         <h1 className='display-head'>Techember Fest "25</h1>
-        <p className='display-head-text'>Join us for an unforgettable experience at <br/>TechWorld! Secure your spots now</p>
-        <p className='display-head-other-text'>📍TechWorld || March 15,2025 | 7:00 PM</p>
+        <p className='display-head-text'>Join us for an unforgettable experience at TechWorld! Secure your spots now</p>
+        {/* <p className='display-head-other-text'>📍TechWorld || March 15,2025 | 7:00 PM</p> */}
+        <div className='display-head-other-text-main-container'>
+          <p className='display-head-other-text'>📍TechWorld</p>
+          <span className='display-head-other-text remove'>||</span>
+          <p className='display-head-other-text'>March 15,2025 | 7:00 PM</p>
+        </div>
       </div>
       <div className='bottom-section1'>
         <p className='select-ticket-text'>Select Ticket type</p>
