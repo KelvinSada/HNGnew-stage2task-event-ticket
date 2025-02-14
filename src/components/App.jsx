@@ -306,7 +306,7 @@ setPickedTicket(value.id)
         /> */}
         <div className="form-section-cont">
           <label className='form-section-title'>"Number of tickets"</label>
-          <input className="form-section-input" type="number" value={formInputsValue.ticketno} name="ticketno" onChange={handleValue} /> 
+          <input className="form-section-input" type="number" value={formInputsValue.ticketno !== ""&&formInputsValue.ticketno} name="ticketno" onChange={handleValue} /> 
         </div>
           {firstError&&<div className='error'>{firstError.ticketno}</div>}
           <div className='submit-buttons'>
