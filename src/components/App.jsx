@@ -56,17 +56,6 @@ function App() {
             textarea:""
           })
     }
-    // if (retrievedData)
-    // if (data !== "undefined"){
-    //   setFormInputsValue(JSON.parse(data))
-    // } else {
-    //   setFormInputsValue({
-    //     ticketno:1,
-    //     name:"",
-    //     email:"",
-    //     textarea:""
-    //   })
-    // }
   
   },[])
   
@@ -134,18 +123,18 @@ function App() {
 
 
 //Saving TicketNo to local storage
-// useEffect(()=>{
-//   const ticketno = localStorage.getItem("Ticket_number")
-//   if (ticketno !== "undefined"){
-//     setPickedTicket(JSON.parse(ticketno))
-//   }
-// },[])
+useEffect(()=>{
+  const ticketno = localStorage.getItem("Ticket_number")
+  if (ticketno){
+    setPickedTicket(JSON.parse(ticketno))
+  }
+},[])
 
 
-// useEffect(()=>{
-//   localStorage.setItem("Ticket_number",JSON.stringify(picketTicket))
-// // eslint-disable-next-line
-// },[picketTicket])
+useEffect(()=>{
+  localStorage.setItem("Ticket_number",JSON.stringify(picketTicket))
+// eslint-disable-next-line
+},[picketTicket])
 
 
 //Saving Page number to local storage
