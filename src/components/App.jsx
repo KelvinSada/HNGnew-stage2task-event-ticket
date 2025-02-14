@@ -1,4 +1,5 @@
-import React,{useEffect, useState} from 'react';
+// import React,{useEffect, useState} from 'react';
+import React from "react";
 import './App.css';
 // import cloudImage from "./picture/cloud.png";
 // import Logo from "./picture/logo.png";
