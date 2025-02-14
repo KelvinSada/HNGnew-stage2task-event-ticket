@@ -418,18 +418,18 @@ setPickedTicket(value.id)
                 <th>Enter your email*</th>
               </tr>
               <tr>
-                <td className='first-table'>{formInputsValue.name}</td>
-                <td>{formInputsValue.email}</td>
+                <td className='first-table table-bottom'>{formInputsValue.name}</td>
+                <td className='table-bottom'>{formInputsValue.email}</td>
             </tr>
             <tr>
-              <th>Ticket Type:</th>
-              <th>Ticket for:</th>
+              <th className='first-table'>Ticket Type:</th>
+              <th >Ticket for:</th>
             </tr>
             <tr>
-              <td>{ticketType}</td>
+              <td className='first-table'>{ticketType}</td>
               <td>{formInputsValue.ticketno}</td>
             </tr>
-            <tr>
+            <tr className='last-table'>
               <th colspan="2">Special request?</th>
             </tr>
             <tr>

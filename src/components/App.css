@@ -812,6 +812,16 @@ textarea {
   height: 60px;
   resize: vertical;
 }
+.first-table{
+  border-right: 1px solid #12464E;
+  width:50%;
+}
+.last-table{
+  border-top:2px solid #12464E;
+}
+.table-bottom{
+  border-bottom:1px solid #12464E ;
+}
 .ticket-content-bottom{
   height:150px;
   display: flex;
