@@ -41,18 +41,18 @@ function App() {
   setPageNo(0);
     }
     //Send ticket to local storge
-  // useEffect(()=>{
-  //   const data = localStorage.getItem("MY_SAVED_FORM_INFO")
-  //   if (data !== "undefined"){
-  //     setFormInputsValue(JSON.parse(data))
-  //   }
+  useEffect(()=>{
+    const data = localStorage.getItem("MY_SAVED_FORM_INFO")
+    if (data !== "undefined"){
+      setFormInputsValue(JSON.parse(data))
+    }
   
-  // },[])
+  },[])
   
-  // useEffect(()=>{
-  //     localStorage.setItem("MY_SAVED_FORM_INFO",JSON.stringify(formInputsValue))
-  //   // eslint-disable-next-line
-  // },[formInputsValue])
+  useEffect(()=>{
+      localStorage.setItem("MY_SAVED_FORM_INFO",JSON.stringify(formInputsValue))
+    // eslint-disable-next-line
+  },[formInputsValue])
 
   
   
@@ -132,6 +132,7 @@ useEffect(()=>{
   console.log(typeof(page))
   if (page > 0){
     console.log("page no is greater then zero")
+    setPageNo(page)
   } else{
     setPageNo(0)
     console.log("page no is different")
