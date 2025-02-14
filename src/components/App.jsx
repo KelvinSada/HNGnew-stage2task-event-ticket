@@ -126,35 +126,42 @@ function App() {
 
 
 //Saving Page number to local storage
-// useEffect(()=>{
-//   const page = window.localStorage.getItem("My_Page_No")
-//   if (page !== undefined && page !== null && page !== "undefined" && page !== "null"){
-//    console.log("page has something")
-//     setPageNo(JSON.parse(page))
+useEffect(()=>{
+  const page = window.localStorage.getItem("My_Page_No")
+  // if (page !== undefined && page !== null && page !== "undefined" && page !== "null"){
+  //  console.log("page has something")
+  //   setPageNo(JSON.parse(page))
 
-//   }else{
-//     console.log("page does not have something")
-//     setPageNo(0)
-//   }
-//   // setPageNo(JSON.parse(page))
-//   // console.log(JSON.parse(page))
-//   // if (page == "null"){
-//   //   alert("page is null")
-//   // } else{
-//   //   alert("page is not null")
-//   // }
+  // }else{
+  //   console.log("page does not have something")
+  //   setPageNo(0)
+  // }
+  console.log(typeof(page))
+  if (page > 0){
+    console.log("page no is greater then zero")
+  } else{
+    setPageNo(0)
+    console.log("page no is different")
+  }
+  // setPageNo(JSON.parse(page))
+  // console.log(JSON.parse(page))
+  // if (page == "null"){
+  //   alert("page is null")
+  // } else{
+  //   alert("page is not null")
+  // }
 
-//   // if (page !== "undefined" ){
-//   //   setPageNo(JSON.parse(page))
-//   // } else{
-//   //   setPageNo(0)
-//   // }
+  // if (page !== "undefined" ){
+  //   setPageNo(JSON.parse(page))
+  // } else{
+  //   setPageNo(0)
+  // }
 
-//   // if (page === "null" || page === "undefined"){
-//   //   setPageNo(0)
-//   // }
-// },[])
-// console.log(pageNo)
+  // if (page === "null" || page === "undefined"){
+  //   setPageNo(0)
+  // }
+},[])
+console.log(pageNo)
 useEffect(()=>{
   window.localStorage.setItem("My_Page_No",pageNo)
 // eslint-disable-next-line
@@ -309,7 +316,7 @@ setPickedTicket(value.id)
       
         </div>
        
-          {/* {firstError&&<div className='error'>{firstError.selectedTicket}</div>} */}
+          {firstError&&<div className='error'>{firstError.selectedTicket}</div>}
         <FormInput 
           label={"Number of tickets"}
           type={"number"}
