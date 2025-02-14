@@ -270,10 +270,10 @@ function App() {
 
     {/* <div className={pageNo===0?"section-1":"pageDisplayNone"}> */}
     <div className="section-1">
-      <TicketHead
+      {/* <TicketHead
         head={"Ticket Selection"}
         steps={"Step 1/3"}
-      />
+      /> */}
       <span className='space-span'>
       <div className='span-progress'></div>
       </span>
@@ -315,10 +315,10 @@ function App() {
       
     {/* <div className={pageNo===1?"section-1 section2":"pageDisplayNone"}> */}
     <div className="section-1 section2">
-      <TicketHead
+      {/* <TicketHead
         head={"Attendee Details"}
         steps={"Step 2/3"}
-      />
+      /> */}
       <span className='space-span'>
       <div className='span-progress'></div>
       </span>
@@ -375,10 +375,10 @@ function App() {
 
     {/* <div className={pageNo===2?'section-1 section2':"pageDisplayNone"}> */}
     <div className='section-1 section2'>
-    <TicketHead
+    {/* <TicketHead
         head={"Ready"}
         steps={"Step 3/3"}
-      />
+      /> */}
       <span className='space-span'>
       <div className='span-progress'></div>
       </span>
