@@ -345,7 +345,7 @@ setPickedTicket(value.id)
           <FormInput 
           label={"Enter your Fullname"}
           type={"text"}
-          value={formInputsValue.name}
+          value={formInputsValue.name&&formInputsValue.name}
           name={"name"}
           action={handleValue}
         />
@@ -353,7 +353,7 @@ setPickedTicket(value.id)
           <FormInput 
           label={"Enter your Email"}
           type={"email"}
-          value={formInputsValue.email}
+          value={formInputsValue.email&&formInputsValue.email}
           name={"email"}
           placeholder={"hello@avioflagos.io"}
           action={handleValue}
