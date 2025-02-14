@@ -376,7 +376,7 @@ setPickedTicket(value.id)
         />
             {errors&&<div className='error'>{errors.email}</div>}
           <div className='form-section-cont'>
-            <label className='form-section-title'>About the project</label>
+            <label className='form-section-title'>Special requests?</label>
             <textarea className="form-section-input text-area" value={formInputsValue.textarea} onChange={handleValue} name="textarea" placeholder='Textarea'/>
           </div>
           {errors&&<div className='error'>{errors.textarea}</div>}
