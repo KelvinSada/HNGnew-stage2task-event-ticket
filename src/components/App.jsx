@@ -77,23 +77,23 @@ function App() {
   }
 
 
-  // function DownloadImage(image){
-  //   setImageUrl(image)    
-  // }
+  function DownloadImage(image){
+    setImageUrl(image)    
+  }
 
     //Saving image to local storage
-  // useEffect(()=>{
-  //   const dataImage = localStorage.getItem("MY_SAVED_IMAGE")
-  //   if (dataImage !== "undefined"){
+  useEffect(()=>{
+    const dataImage = localStorage.getItem("MY_SAVED_IMAGE")
+    if (dataImage !== "undefined"){
       
-  //     DownloadImage(JSON.parse(dataImage))
-  //   }
-  // },[])
+      DownloadImage(JSON.parse(dataImage))
+    }
+  },[])
 
-  // useEffect(()=>{
-  //     localStorage.setItem("MY_SAVED_IMAGE",JSON.stringify(imageUrl))
-  //   // eslint-disable-next-line
-  // },[imageUrl])
+  useEffect(()=>{
+      localStorage.setItem("MY_SAVED_IMAGE",JSON.stringify(imageUrl))
+    // eslint-disable-next-line
+  },[imageUrl])
 
 
     //Saving TicketType to local storage
