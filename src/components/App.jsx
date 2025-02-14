@@ -6,7 +6,7 @@ import Logo from "./picture/logo.png";
 import FormInput from './Forms-input';
 import TicketHead from './TicketHead';
 import arrow from "./picture/arrow.jpg";
-import mail from "./picture/envelope.png"
+// import mail from "./picture/envelope.png"
 
 
 function App() {
