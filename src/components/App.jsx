@@ -1,26 +1,26 @@
-// import React,{useEffect, useState} from 'react';
-// import './App.css';
-// import cloudImage from "./picture/cloud.png";
+import React,{useEffect, useState} from 'react';
+import './App.css';
+import cloudImage from "./picture/cloud.png";
 // import Logo from "./picture/logo.png";
 // import FormInput from './Forms-input';
 // import TicketHead from './TicketHead';
-import React from "react";
+// import React from "react";
 function App() {
-//   const [imageUrl,setImageUrl] = useState()
-//   const [firstError,setFirstError] = useState()
-//   const [errors,setErrors] =useState()
-//   const [savedFormData,setSavedFormData] = useState(false)
-//   const [formInputsValue,setFormInputsValue] = useState({
-//     ticketno:1,
-//     name:"",
-//     email:"",
-//     textarea:""
-//   })
+  // const [imageUrl,setImageUrl] = useState()
+  // const [firstError,setFirstError] = useState()
+  // const [errors,setErrors] =useState()
+  // const [savedFormData,setSavedFormData] = useState(false)
+  // const [formInputsValue,setFormInputsValue] = useState({
+  //   ticketno:1,
+  //   name:"",
+  //   email:"",
+  //   textarea:""
+  // })
     
-//   const [picketTicket,setPickedTicket] = useState()
-//   const [ticketType,setTicketType] = useState()
+  // const [picketTicket,setPickedTicket] = useState()
+  // const [ticketType,setTicketType] = useState()
     
-//   const [pageNo, setPageNo] = useState(0);
+  const [pageNo, setPageNo] = useState(0);
 
 //     function bookNewTicket(){
 //       setImageUrl()
@@ -121,39 +121,39 @@ function App() {
 // },[picketTicket])
 
 
-// //Saving Page number to local storage
-// // useEffect(()=>{
-// //   const page = window.localStorage.getItem("My_Page_No")
-// //   if (page !== undefined && page !== null && page !== "undefined" && page !== "null"){
+//Saving Page number to local storage
+useEffect(()=>{
+  const page = window.localStorage.getItem("My_Page_No")
+  if (page !== undefined && page !== null && page !== "undefined" && page !== "null"){
    
-// //     setPageNo(JSON.parse(page))
+    setPageNo(JSON.parse(page))
 
-// //   }else{
-// //     setPageNo(0)
-// //   }
-// //   // setPageNo(JSON.parse(page))
-// //   // console.log(JSON.parse(page))
-// //   // if (page == "null"){
-// //   //   alert("page is null")
-// //   // } else{
-// //   //   alert("page is not null")
-// //   // }
+  }else{
+    setPageNo(0)
+  }
+  // setPageNo(JSON.parse(page))
+  // console.log(JSON.parse(page))
+  // if (page == "null"){
+  //   alert("page is null")
+  // } else{
+  //   alert("page is not null")
+  // }
 
-// //   // if (page !== "undefined" ){
-// //   //   setPageNo(JSON.parse(page))
-// //   // } else{
-// //   //   setPageNo(0)
-// //   // }
+  // if (page !== "undefined" ){
+  //   setPageNo(JSON.parse(page))
+  // } else{
+  //   setPageNo(0)
+  // }
 
-// //   // if (page === "null" || page === "undefined"){
-// //   //   setPageNo(0)
-// //   // }
-// // },[])
-// console.log(pageNo)
-// useEffect(()=>{
-//   window.localStorage.setItem("My_Page_No",JSON.stringify(pageNo))
-// // eslint-disable-next-line
-// },[pageNo])
+  // if (page === "null" || page === "undefined"){
+  //   setPageNo(0)
+  // }
+},[])
+console.log(pageNo)
+useEffect(()=>{
+  window.localStorage.setItem("My_Page_No",JSON.stringify(pageNo))
+// eslint-disable-next-line
+},[pageNo])
 
 
 //   function isValidEmail(email){
@@ -251,9 +251,11 @@ function App() {
 // setTicketType(value.name)
 // setPickedTicket(value.id)
 // }
+console.log(pageNo)
   return (
     <div className="App">
       <h1>Hello</h1>
+      <div className={!pageNo&&"pageDisplayNone"}>Display-pageNo</div>
     </div>
   );
 }
