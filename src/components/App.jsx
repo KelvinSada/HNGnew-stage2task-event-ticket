@@ -105,19 +105,24 @@ function App() {
 
 
     //Saving TicketType to local storage
-    // useEffect(()=>{
-    //   const ticket = localStorage.getItem("Ticket_type")
-    //   if (ticket){
-    //     setTicketType(JSON.parse(ticket))
-    //   } else{
-    //     setTicketType()
-    //   }
-    // },[])
+    useEffect(()=>{
+      const ticket = localStorage.getItem("Ticket_type")
+      // const actualTicket = JSON.parse(ticket)
+      console.log(typeof(ticket))
 
-  //   useEffect(()=>{
-  //     localStorage.setItem("Ticket_type",JSON.stringify(ticketType))
-  //   // eslint-disable-next-line
-  // },[ticketType])
+      if (ticket !== "undefined"){
+          setTicketType(JSON.parse(ticket))
+      } 
+      // if (ticket){
+      // } else{
+      //   setTicketType()
+      // }
+    },[])
+
+    useEffect(()=>{
+      localStorage.setItem("Ticket_type",JSON.stringify(ticketType))
+    // eslint-disable-next-line
+  },[ticketType])
 
 
 //Saving TicketNo to local storage
