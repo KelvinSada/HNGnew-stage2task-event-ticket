@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react';
 import './App.css';
-import cloudImage from "./picture/cloud.png";
+// import cloudImage from "./picture/cloud.png";
 // import Logo from "./picture/logo.png";
 // import FormInput from './Forms-input';
 // import TicketHead from './TicketHead';
