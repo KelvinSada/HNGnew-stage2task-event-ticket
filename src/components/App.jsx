@@ -297,13 +297,13 @@ setPickedTicket(value.id)
         </div>
        
           {firstError&&<div className='error'>{firstError.selectedTicket}</div>}
-        {/* <FormInput 
+        <FormInput 
           label={"Number of tickets"}
           type={"number"}
-          value={formInputsValue.ticketno}
+          value={formInputsValue.ticketno&&formInputsValue.ticketno}
           name={"ticketno"}
           action={handleValue}
-        /> */}
+        />
           {firstError&&<div className='error'>{firstError.ticketno}</div>}
           <div className='submit-buttons'>
             <button onClick={backButton} className='first-button'>Cancel</button>
