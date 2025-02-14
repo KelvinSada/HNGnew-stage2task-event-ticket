@@ -155,10 +155,10 @@ function App() {
 //   // }
 // },[])
 // console.log(pageNo)
-// useEffect(()=>{
-//   window.localStorage.setItem("My_Page_No",JSON.stringify(pageNo))
-// // eslint-disable-next-line
-// },[pageNo])
+useEffect(()=>{
+  window.localStorage.setItem("My_Page_No",pageNo)
+// eslint-disable-next-line
+},[pageNo])
 
 
   function isValidEmail(email){
