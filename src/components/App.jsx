@@ -140,21 +140,21 @@ function App() {
 //Saving Page number to local storage
 useEffect(()=>{
   const page = window.localStorage.getItem("My_Page_No")
-  
-  console.log(page)
+  const gottenNo = JSON.parse(page)
+  console.log(gottenNo)
   // if (page > 0){
   //   setPageNo(page)
   // } else{
   //   setPageNo(0)
   // }
-  if (page){
-    setPageNo(page)
+  if (gottenNo){
+    setPageNo(gottenNo)
   } else {
     setPageNo(0)
   }
 },[])
 useEffect(()=>{
-  window.localStorage.setItem("My_Page_No",pageNo)
+  window.localStorage.setItem("My_Page_No",JSON.stringify(pageNo))
 // eslint-disable-next-line
 },[pageNo])
 
