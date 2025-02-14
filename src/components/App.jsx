@@ -15,7 +15,7 @@ function App() {
   const [errors,setErrors] =useState()
   const [savedFormData,setSavedFormData] = useState(false)
   const [formInputsValue,setFormInputsValue] = useState({
-    ticketno:1,
+    ticketno:"1",
     name:"",
     email:"",
     textarea:""
