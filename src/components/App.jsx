@@ -15,7 +15,7 @@ function App() {
   const [errors,setErrors] =useState()
   const [savedFormData,setSavedFormData] = useState(false)
   const [formInputsValue,setFormInputsValue] = useState({
-    ticketno:"1",
+    ticketno:1,
     name:"",
     email:"",
     textarea:""
@@ -45,6 +45,13 @@ function App() {
     const data = localStorage.getItem("MY_SAVED_FORM_INFO")
     if (data !== "undefined"){
       setFormInputsValue(JSON.parse(data))
+    } else {
+      setFormInputsValue({
+        ticketno:1,
+        name:"",
+        email:"",
+        textarea:""
+      })
     }
   
   },[])
@@ -101,6 +108,8 @@ function App() {
       const ticket = localStorage.getItem("Ticket_type")
       if (ticket !== "undefined"){
         setTicketType(JSON.parse(ticket))
+      } else{
+
       }
     },[])
 
