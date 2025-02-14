@@ -105,17 +105,17 @@ function App() {
 
 
     //Saving TicketType to local storage
-    useEffect(()=>{
-      const ticket = localStorage.getItem("Ticket_type")
-      if (ticket){
-        setTicketType(JSON.parse(ticket))
-      } 
-    },[])
+  //   useEffect(()=>{
+  //     const ticket = localStorage.getItem("Ticket_type")
+  //     if (ticket){
+  //       setTicketType(JSON.parse(ticket))
+  //     } 
+  //   },[])
 
-    useEffect(()=>{
-      localStorage.setItem("Ticket_type",JSON.stringify(ticketType))
-    // eslint-disable-next-line
-  },[ticketType])
+  //   useEffect(()=>{
+  //     localStorage.setItem("Ticket_type",JSON.stringify(ticketType))
+  //   // eslint-disable-next-line
+  // },[ticketType])
 
 
 //Saving TicketNo to local storage
