@@ -43,16 +43,30 @@ function App() {
     //Send ticket to local storge
   useEffect(()=>{
     const data = localStorage.getItem("MY_SAVED_FORM_INFO")
-    if (data !== "undefined"){
-      setFormInputsValue(JSON.parse(data))
-    } else {
+    const retrievedData = JSON.parse(data);
+    // console.log(retrievedData)
+    if (retrievedData){
+      setFormInputsValue(retrievedData)
+    } 
+    else{
       setFormInputsValue({
-        ticketno:1,
-        name:"",
-        email:"",
-        textarea:""
-      })
+            ticketno:1,
+            name:"",
+            email:"",
+            textarea:""
+          })
     }
+    // if (retrievedData)
+    // if (data !== "undefined"){
+    //   setFormInputsValue(JSON.parse(data))
+    // } else {
+    //   setFormInputsValue({
+    //     ticketno:1,
+    //     name:"",
+    //     email:"",
+    //     textarea:""
+    //   })
+    // }
   
   },[])
   
@@ -140,14 +154,11 @@ useEffect(()=>{
   
   console.log(typeof(page))
   if (page > 0){
-    console.log("page no is greater then zero")
     setPageNo(page)
   } else{
     setPageNo(0)
-    console.log("page no is different")
   }
 },[])
-console.log(pageNo)
 useEffect(()=>{
   window.localStorage.setItem("My_Page_No",pageNo)
 // eslint-disable-next-line
