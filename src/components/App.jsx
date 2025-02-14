@@ -123,28 +123,33 @@ function App() {
 
 
 //Saving TicketNo to local storage
-useEffect(()=>{
-  const ticketno = localStorage.getItem("Ticket_number")
-  if (ticketno){
-    setPickedTicket(JSON.parse(ticketno))
-  }
-},[])
+// useEffect(()=>{
+//   const ticketno = localStorage.getItem("Ticket_number")
+//   if (ticketno){
+//     setPickedTicket(JSON.parse(ticketno))
+//   }
+// },[])
 
 
-useEffect(()=>{
-  localStorage.setItem("Ticket_number",JSON.stringify(picketTicket))
-// eslint-disable-next-line
-},[picketTicket])
+// useEffect(()=>{
+//   localStorage.setItem("Ticket_number",JSON.stringify(picketTicket))
+// // eslint-disable-next-line
+// },[picketTicket])
 
 
 //Saving Page number to local storage
 useEffect(()=>{
   const page = window.localStorage.getItem("My_Page_No")
   
-  console.log(typeof(page))
-  if (page > 0){
+  console.log(page)
+  // if (page > 0){
+  //   setPageNo(page)
+  // } else{
+  //   setPageNo(0)
+  // }
+  if (page){
     setPageNo(page)
-  } else{
+  } else {
     setPageNo(0)
   }
 },[])
