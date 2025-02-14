@@ -22,6 +22,7 @@
 }
 header{
   display:flex;
+  /* display:none; */
   justify-content: space-between;
   padding:0 1em;
 
@@ -93,6 +94,7 @@ font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  display:none;
 }
 .top-section-steps{
   color: #FAFAFA;
@@ -153,6 +155,11 @@ font-style: normal;
 font-weight: 400;
 line-height: 150%;
 display: flex;
+}
+.display-head-other-text-main-container{
+  display:flex;
+  align-items: flex-start;
+gap: 16px;
 }
 .bottom-section1{
 width:100%;
@@ -586,7 +593,8 @@ background: #FFF;
     font-size: 1.5rem;
   }
   .top-section1{
-    height: 243px;
+    height: 250px;
+    width:100%;
     padding: 1em 1.5em;
   }
   .display-head{
@@ -694,6 +702,19 @@ font-size: 16px;
 font-style: normal;
 font-weight: 400;
 line-height: 150%
+    }
+    .display-head-other-text{
+      font-size:16px;
+    }
+    .display-head-other-text-main-container{
+      display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 4px;
+    }
+    .remove{
+      display:none;
     }
 }
 .pageDisplayNone{
