@@ -125,10 +125,11 @@ function App() {
 useEffect(()=>{
   const page = window.localStorage.getItem("My_Page_No")
   if (page !== undefined && page !== null && page !== "undefined" && page !== "null"){
-   
+   console.log("page has something")
     setPageNo(JSON.parse(page))
 
   }else{
+    console.log("page does not have something")
     setPageNo(0)
   }
   // setPageNo(JSON.parse(page))
