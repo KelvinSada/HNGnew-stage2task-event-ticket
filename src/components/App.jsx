@@ -327,8 +327,8 @@ setPickedTicket(value.id)
         head={"Attendee Details"}
         steps={"Step 2/3"}
       />
-      <span className='space-span'>
-      <div className='span-progress'></div>
+      <span className='space-span2'>
+      <div className='span-progress2'></div>
       </span>
       <div className="section-container">
         <div className="upload-image-section">
@@ -387,8 +387,8 @@ setPickedTicket(value.id)
         head={"Ready"}
         steps={"Step 3/3"}
       />
-      <span className='space-span'>
-      <div className='span-progress'></div>
+      <span className='space-span3'>
+      <div className='span-progress3'></div>
       </span>
       <div className='last-page-top-container'>
       <h1 className='last-page-title'>Your Ticket is Booked!</h1>
