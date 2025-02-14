@@ -3,7 +3,7 @@ import React,{useEffect, useState} from 'react';
 import './App.css';
 import cloudImage from "./picture/cloud.png";
 import Logo from "./picture/logo.png";
-// import FormInput from './Forms-input';
+import FormInput from './Forms-input';
 import TicketHead from './TicketHead';
 import arrow from "./picture/arrow.jpg";
 // import mail from "./picture/envelope.png"
@@ -317,17 +317,17 @@ setPickedTicket(value.id)
         </div>
        
           {firstError&&<div className='error'>{firstError.selectedTicket}</div>}
-        {/* <FormInput 
+        <FormInput 
           label={"Number of tickets"}
           type={"number"}
           value={formInputsValue.ticketno&&formInputsValue.ticketno}
           name={"ticketno"}
           action={handleValue}
-        /> */}
-        <div className="form-section-cont">
+        />
+        {/* <div className="form-section-cont">
           <label className='form-section-title'>"Number of tickets"</label>
           <input className="form-section-input" type="number" value={formInputsValue.ticketno !== ""&&formInputsValue.ticketno} name="ticketno" onChange={handleValue} /> 
-        </div>
+        </div> */}
           {firstError&&<div className='error'>{firstError.ticketno}</div>}
           <div className='submit-buttons'>
             <button onClick={backButton} className='first-button'>Cancel</button>
@@ -366,15 +366,15 @@ setPickedTicket(value.id)
         <span className='middle-span'>
       </span>
         <form onSubmit={handleSubmit} className="form-container">
-          {/* <FormInput 
+          <FormInput 
           label={"Enter your Fullname"}
           type={"text"}
           value={formInputsValue.name}
           name={"name"}
           action={handleValue}
-        /> */}
+        />
             {errors&&<div className='error'>{errors.name}</div>}
-          {/* <FormInput 
+          <FormInput 
           label={"Enter your Email"}
           type={"email"}
           value={formInputsValue.email}
@@ -382,7 +382,7 @@ setPickedTicket(value.id)
           placeholder={"hello@avioflagos.io"}
           action={handleValue}
           required={true}
-        /> */}
+        />
             {errors&&<div className='error'>{errors.email}</div>}
           <div className='form-section-cont'>
             <label className='form-section-title'>About the project</label>
