@@ -1,5 +1,5 @@
-// import React,{useEffect, useState} from 'react';
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
+// import React,{useState} from 'react';
 import './App.css';
 import cloudImage from "./picture/cloud.png";
 import Logo from "./picture/logo.png";
@@ -97,17 +97,17 @@ function App() {
 
 
     //Saving TicketType to local storage
-  //   useEffect(()=>{
-  //     const ticket = localStorage.getItem("Ticket_type")
-  //     if (ticket !== "undefined"){
-  //       setTicketType(JSON.parse(ticket))
-  //     }
-  //   },[])
+    useEffect(()=>{
+      const ticket = localStorage.getItem("Ticket_type")
+      if (ticket !== "undefined"){
+        setTicketType(JSON.parse(ticket))
+      }
+    },[])
 
-  //   useEffect(()=>{
-  //     localStorage.setItem("Ticket_type",JSON.stringify(ticketType))
-  //   // eslint-disable-next-line
-  // },[ticketType])
+    useEffect(()=>{
+      localStorage.setItem("Ticket_type",JSON.stringify(ticketType))
+    // eslint-disable-next-line
+  },[ticketType])
 
 
 //Saving TicketNo to local storage
@@ -291,7 +291,10 @@ setPickedTicket(value.id)
           <p className='display-head-other-text'>March 15,2025 | 7:00 PM</p>
         </div>
       </div>
+      
       <div className='bottom-section1'>
+      <span className='middle-span'>
+      </span>
         <p className='select-ticket-text'>Select Ticket type</p>
         <div className='ticket-type-container'>
           { 
@@ -303,7 +306,9 @@ setPickedTicket(value.id)
           </div>
         ))
       }
+      
         </div>
+       
           {/* {firstError&&<div className='error'>{firstError.selectedTicket}</div>} */}
         <FormInput 
           label={"Number of tickets"}
@@ -347,7 +352,8 @@ setPickedTicket(value.id)
           </div>
               {errors&&<div className='error'>{errors.image}</div>}
         </div>
-
+        <span className='middle-span'>
+      </span>
         <form onSubmit={handleSubmit} className="form-container">
           <FormInput 
           label={"Enter your Fullname"}

@@ -584,6 +584,17 @@ border-radius: var(--Radius-reg-2, 12px);
 border: 1px solid #197686;
 background: #12464E;
 }
+.middle-span{
+  display:block;
+  height:4px;
+  margin:2em 0;
+background: #07373F;
+}
+.inside-span{
+  display:block;
+  height:50px;
+  width:100%;
+}
 @media(max-width:600px){
   .nav-menu{
     display:none;
