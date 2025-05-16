@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react';
+import React,{useEffect, useState,useRef} from 'react';
 import './App.css';
 import cloudImage from "./picture/cloud.png";
 import Logo from "./picture/logo.png";
@@ -11,7 +11,6 @@ function App() {
   const [imageUrl,setImageUrl] = useState()
   const [firstError,setFirstError] = useState()
   const [errors,setErrors] =useState()
-  const [savedFormData,setSavedFormData] = useState(false)
   const [formInputsValue,setFormInputsValue] = useState({
     ticketno:1,
     name:"",
@@ -21,28 +20,28 @@ function App() {
     
   const [picketTicket,setPickedTicket] = useState()
   const [ticketType,setTicketType] = useState()
+  const topOfPage =useRef(null)
+  
     
   const [pageNo, setPageNo] = useState(0);
 
-    function bookNewTicket(){
-      setImageUrl()
-      setSavedFormData(false)
-      setFormInputsValue({
+  function bookNewTicket(){
+    setImageUrl()
+    setFormInputsValue({
     ticketno:1,
     name:"",
     email:"",
     textarea:""
   })
-  setPickedTicket()
-  setTicketType()
-    
-  setPageNo(0);
-    }
-    //Send ticket to local storge
+    setPickedTicket()
+    setTicketType()
+    setPageNo(0);
+  }
+
+  //Send Form Input to local storge
   useEffect(()=>{
-    const data = localStorage.getItem("MY_SAVED_FORM_INFO")
+    const data = window.localStorage.getItem("MY_SAVED_FORM_INFO")
     const retrievedData = JSON.parse(data);
-    // console.log(retrievedData)
     if (retrievedData){
       setFormInputsValue(retrievedData)
     } 
@@ -58,14 +57,14 @@ function App() {
   },[])
   
   useEffect(()=>{
-      localStorage.setItem("MY_SAVED_FORM_INFO",JSON.stringify(formInputsValue))
+    localStorage.setItem("MY_SAVED_FORM_INFO",JSON.stringify(formInputsValue))
     // eslint-disable-next-line
   },[formInputsValue])
 
-  
-  
+
   async function handlePictureUpload(event){
     const imageFile = event.target.files[0]
+    
     if (!imageFile)return
     
     const data = new FormData()  //created a formData object
@@ -178,10 +177,12 @@ function handleValue(e){
       [name]:value
     }
   })
-  setSavedFormData(!savedFormData)
-  
 }
 function firstAction(){
+    topOfPage.current.scrollIntoView(
+      {behavior:"smooth",inline:"nearest"}
+    )
+    
   let error ={}
   if (!formInputsValue.ticketno){
     error.ticketno="Please select the no of tickets"
@@ -199,6 +200,9 @@ function firstAction(){
   }
 }
 function handleSubmitClick(event){
+      topOfPage.current.scrollIntoView(
+      {behavior:"smooth",inline:"nearest"}
+    )
   let newErrors = {}
   
   if (!imageUrl){
@@ -272,6 +276,7 @@ setPickedTicket(value.id)
       <button className="tickets-button">MY TICKETS <img src={arrow} alt=""/></button>
     </header>
     <main className='content-body'>
+    <div ref={topOfPage}></div>
 
     <div className={pageNo===0?"section-1":"pageDisplayNone"}>
     {/* <div className="section-1"> */}
@@ -341,16 +346,12 @@ setPickedTicket(value.id)
         <div className="upload-image-section">
           <h2 className='select-image'>Upload Profile Photo</h2>
           <div className="upload-photo-container">
-              
-              <div className='custom-image'>
+              {/* Uploaded Image */}
               <label style={{backgroundImage:`url("${imageUrl}")`,backgroundSize:"contain",}} className="custom-image" htmlFor="myImage">
                 <img src={cloudImage} alt=""/>
                 <p className='upload-image-text'>Drag and drop or click to upload</p>
               </label>
-              </div>
-              
-              <input id="myImage" className='inner-image-container' type="file" onChange={handlePictureUpload}/>
-
+              <input id="myImage" type="file" onChange={handlePictureUpload}/>
           </div>
               {errors&&<div className='error'>{errors.image}</div>}
         </div>
